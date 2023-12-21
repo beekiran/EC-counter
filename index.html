@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yours Truly - Kiran</title>
+    <link rel = "stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class = "lid one"></div>
+        <div class = "lid two"></div>
+        <div class = "envelope"></div>
+        <div class = "letter">
+                <p id = "value1"></p>
+                <p id = "value2"></p>
+
+            </div>
+
+    <!-- <h1 id="heading">Eloïse</h1>
+    <h2>So far you crossed my mind</h2> 
+    <div><h2 type="text" id="value1" disabled><h2>times!</h2></div>
+    <br>
+    <h2 type="text" id="value2" disabled> -->
+    
+    <script>
+        // Replace this URL with your API endpoint
+        const apiUrl = 'https://script.google.com/macros/s/AKfycbwCRCwVNvxpCvZvgAqr1mAATQXt_Ifjv7pgI48w1VlLA-J4mGjns425kotpovheL-ej/exec';
+
+        // Fetch data from the API
+        fetch(apiUrl)
+        .then(response => response.json())
+        .then(data => {
+            console.log(data.data[0].counter);
+            document.getElementById('value1').innerHTML = data.data[0].counter
+            console.log(data.data[0].text);
+            document.getElementById('value2').innerHTML = data.data[0].text
+            
+
+        })
+        .catch(error => {
+          console.error('Error fetching data:', error);
+        });
+        
+    </script>
+
+</body>
+</html>
